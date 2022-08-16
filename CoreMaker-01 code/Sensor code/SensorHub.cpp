@@ -258,6 +258,11 @@ namespace CMC
                                 if (ret > -1)
                                 {
                                     printf("%d\n", ret);
+                                    if(ret==1){
+                                        led_b.Flash();
+                                    }else{
+                                        led_g.Flash();
+                                    }
                                     kb_reset_model(0); // Reset running model to initial state.
                                 }
                                 else if (ret == -2)
@@ -275,7 +280,7 @@ namespace CMC
                         sensorEvent.set(SENSOR_EVENT(SENSOR_TEST));
                 }
 
-                led_g.Flash();
+                //led_g.Flash();
             }
             else if (flags == osFlagsErrorTimeout) // No event
             {
@@ -288,7 +293,7 @@ namespace CMC
                         m_DCLJsonCnt = 0;
                         m_DCLStatus = DCL_DISCONNECT;
                     }
-                    led_g.Flash();
+                    //led_g.Flash();
                 }
             }
         }
