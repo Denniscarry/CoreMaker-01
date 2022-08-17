@@ -5,7 +5,6 @@ char cmd;
 
 void setup() {
   Serial.begin(115200); //設定鮑率115200
-  Serial.println("Arduino Ready!");
   pinMode(13, OUTPUT); //設定LED輸出腳位
   myservo.attach(9); //設定馬達腳位
   rain = 0; //雨聲次數
